@@ -31,7 +31,7 @@
     "test:e2e": "NODE_ENV=test cypress open",
     "test:ci": "NODE_ENV=test cypress run",
     "test": "node node_modules/grunt-cli/bin/grunt test",
-    "db:seed": "NODE_ENV=test grunt db-reset",
+    "db:seed": "NODE_ENV=test grunt db-reset:development",
     "precommit": "grunt precommit",
     "docker-mongo": "docker run -p 27017:27017 --name mongo  mongo:latest",
     "start-infra": "docker-compose up",
