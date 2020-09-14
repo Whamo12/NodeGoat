@@ -5,7 +5,11 @@ const ContributionsHandler = require('./contributions');
 const AllocationsHandler = require('./allocations');
 const MemosHandler = require('./memos');
 const ResearchHandler = require('./research');
+// setup route middlewares
 
+// setup csrf
+// let csrf = require('csurf');
+// let csrfProtection = csrf();
 const ErrorHandler = require('./error').errorHandler;
 
 const index = (app, db) => {
