@@ -54,11 +54,6 @@ MongoClient.connect(db, (err, db) => {
   app.set('views', `${__dirname}/app/views`);
   app.use(express.static(`${__dirname}/app/assets`));
 
-  // Initializing marked library
-  // Fix for A9 - Insecure Dependencies
-  marked.setOptions({
-    sanitize: true
-  });
   app.locals.marked = marked;
 
   // Application routes

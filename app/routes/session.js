@@ -19,15 +19,11 @@ function SessionHandler(db) {
     });
   };
 
-  this.isAdminUserMiddleware = (req, res, next) => {
-    if (req.session.userId) {
-      return userDAO.getUserById(req.session.userId, (err, user) =>
-        user && user.isAdmin ? next() : res.redirect('/login')
-      );
-    }
-    console.log('redirecting to login');
-    return res.redirect('/login');
-  };
+  // A7 - Access Control
+  // Description: Middleware that prevents users that are not
+  // admins to access API
+  // TODO: Implement
+  this.isAdminUserMiddleware = (req, res, next) => {};
 
   this.isLoggedInMiddleware = (req, res, next) => {
     if (req.session.userId) {
