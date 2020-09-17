@@ -1,5 +1,6 @@
 const UserDAO = require('../data/user-dao').UserDAO;
 const AllocationsDAO = require('../data/allocations-dao').AllocationsDAO;
+var passwordValidator = require('password-validator');
 
 /* The SessionHandler must be constructed with a connected db */
 function SessionHandler(db) {
@@ -7,7 +8,6 @@ function SessionHandler(db) {
 
   const userDAO = new UserDAO(db);
   const allocationsDAO = new AllocationsDAO(db);
-
   const prepareUserData = (user, next) => {
     // Generate random allocations
     const stocks = Math.floor(Math.random() * 40 + 1);
